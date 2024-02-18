@@ -25,6 +25,7 @@ class ProductManager{
             console.log("Producto no encontrado.");
             return;
         }
+        
         return product;
     }
 }
@@ -38,6 +39,9 @@ Products.addProduct("Pantalón", "Pantalón vaquero", 30, "pantalon.jpg", "P002"
 
 
 console.log(Products.getProduct());
+
+console.log(Products.getProductById(2)); // Búsqueda por Id
+console.log(Products.getProductById(4)); // Búsqueda por Id
 
 // class ProductManager {
 //     constructor() {
