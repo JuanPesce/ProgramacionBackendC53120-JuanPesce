@@ -1,4 +1,4 @@
-// // Entrega Entrega-ECMAScript-y-ECMAScript-avanzado Juan Pesce
+// Entrega Entrega-ECMAScript-y-ECMAScript-avanzado Juan Pesce
 
 class ProductManager{
     
