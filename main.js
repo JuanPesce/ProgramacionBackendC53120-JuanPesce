@@ -12,6 +12,7 @@ class ProductManager{
 
     addProduct(title, description, price, thumbnail, code, stock){
         ProductManager.id ++    // Esto haria que el incremental sea automatico
+
         this.products.push({title, description, price, thumbnail, code, stock, id:ProductManager.id});
     }
 
@@ -22,7 +23,7 @@ class ProductManager{
     getProductById(id) {
         const product = this.products.find(product => product.id === id);
         if (!product) {
-            console.log("Producto no encontrado.");
+            console.log("Not found");
             return;
         }
         
@@ -33,13 +34,18 @@ class ProductManager{
 
 const Products = new ProductManager();
 
-Products.addProduct("Pantalón", "Pantalón vaquero", 30, "pantalon.jpg", "P002", 50); // Producto agregado al Array
-Products.addProduct("Pantalón", "Pantalón vaquero", 30, "pantalon.jpg", "P002", 50); // Producto agregado al Array
-Products.addProduct("Pantalón", "Pantalón vaquero", 30, "pantalon.jpg", "P002", 50); // Producto agregado al Array
-
-
+// LLamamos al arreglo vacio
 console.log(Products.getProduct());
 
+// Agregamos tres productos
+Products.addProduct("Yerba", "Yerba Clasica", 2000, "yerba1.jpg", "ABC123", 50); // Producto agregado al Array
+Products.addProduct("Yerba", "Yerba Organica", 2500, "yerba2.jpg", "DEF123", 150); // Producto agregado al Array
+Products.addProduct("Yerba", "Yerba Despalada", 3000, "yerba3.jpg", "GHI123", 250); // Producto agregado al Array
+
+// LLamamos al arreglo con los codigos agregados
+console.log(Products.getProduct());
+
+// Llamo a la funcion buscador por ID
 console.log(Products.getProductById(2)); // Búsqueda por Id
 console.log(Products.getProductById(4)); // Búsqueda por Id
 
