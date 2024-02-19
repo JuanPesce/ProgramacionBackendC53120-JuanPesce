@@ -11,6 +11,17 @@ class ProductManager{
     static id = 0;
 
     addProduct(title, description, price, thumbnail, code, stock){
+        
+        if(!title || !description || !price || !thumbnail || !code || !stock){
+            console.log("Error! Todos los campos son obligatorios.");
+            return
+        }
+
+        if(this.products.some(product => product.code == code)){
+            console.log(`Error! El codigo ${code} ya existe `);
+            return
+        }
+
         ProductManager.id ++    // Esto haria que el incremental sea automatico
 
         this.products.push({title, description, price, thumbnail, code, stock, id:ProductManager.id});
@@ -21,14 +32,15 @@ class ProductManager{
     }
     
     getProductById(id) {
-        const product = this.products.find(product => product.id === id);
-        if (!product) {
-            console.log("Not found");
-            return;
-        }
-        
-        return product;
+		if(this.products.some(prod => prod.id === id)) {
+			return this.products.find(prod => prod.id === id);
+		} else {
+			console.log('Not found');
+		}
     }
+
+
+
 }
 
 
@@ -41,70 +53,13 @@ console.log(Products.getProduct());
 Products.addProduct("Yerba", "Yerba Clasica", 2000, "yerba1.jpg", "ABC123", 50); // Producto agregado al Array
 Products.addProduct("Yerba", "Yerba Organica", 2500, "yerba2.jpg", "DEF123", 150); // Producto agregado al Array
 Products.addProduct("Yerba", "Yerba Despalada", 3000, "yerba3.jpg", "GHI123", 250); // Producto agregado al Array
+Products.addProduct("Yerba", "Yerba Despalada", 3000, "yerba3.jpg", "GHI123", 250); // Producto agregado al Array y genera error por repetido
 
 // LLamamos al arreglo con los codigos agregados
 console.log(Products.getProduct());
 
 // Llamo a la funcion buscador por ID
 console.log(Products.getProductById(2)); // Búsqueda por Id
-console.log(Products.getProductById(4)); // Búsqueda por Id
+console.log(Products.getProductById(5)); // Búsqueda por Id not found
 
-// class ProductManager {
-//     constructor() {
-//         this.products = [];
-//     }
 
-//     addProduct(title, description, price, thumbnail, code, stock) {
-
-//         if (!title || !description || !price || !thumbnail || !code || !stock) {
-//             console.log("Todos los campos son obligatorios.");
-//             return;
-//         }
-
-//         // Validar que el código no esté repetido
-//         if (this.products.some(product => product.code === code)) {
-//             console.log(`El código ${code} está repetido.`);
-//             return;
-//         }
-
-//         const product = {
-//             id: this.products.length + 1, // ID autoincrementable
-//             title: title,
-//             description: description,
-//             price: price,
-//             thumbnail: thumbnail,
-//             code: code,
-//             stock: stock
-//         };
-
-//         this.products.push(product); // Agrega los productos al array vacío
-//     }
-
-//     getProducts() {
-//         return this.products;
-//     }
-
-//     getProductById(id) {
-//         const product = this.products.find(product => product.id === id);
-//         if (!product) {
-//             console.log("Producto no encontrado.");
-//             return;
-//         }
-//         return product;
-//     }
-
-// }
-
-// // Ejemplo de uso
-// const productCreated = new ProductManager();
-// console.log(productCreated.getProducts()); // Arreglo vacío
-// productCreated.addProduct("Camiseta", "Camiseta de algodón", 20, "camiseta.jpg", "C001", 100); // Producto agregado al Array
-// productCreated.addProduct("Pantalón", "Pantalón vaquero", 30, "pantalon.jpg", "P002", 50); // Producto agregado al Array
-// productCreated.addProduct("Buzo", "Buzo de algodón", 22, "Buzo.jpg", "B003", 25); // Producto agregado al Array
-// productCreated.addProduct("Medias", "Medias de algodón", 66, "Medias.jpg", "B003"); // Value incompleto "stock"
-// productCreated.addProduct("Campera", "Campera de cuero", 32, "Campera.jpg", "B003", 43); // Code repetido
-// console.log(productCreated.getProducts()); // Segundo llamado al Array con los productos agregados
-// console.log("En este punto se van a ver los productos indicando el ID en su busqueda");
-// console.log(productCreated.getProductById(2)); // Búsqueda por Id
-// console.log(productCreated.getProductById(3)); // Búsqueda por Id
-// console.log(productCreated.getProductById(4)); // Producto n
