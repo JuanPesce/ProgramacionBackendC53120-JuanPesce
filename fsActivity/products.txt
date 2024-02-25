@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"title": "Yerba Saborizada",
+		"description": "Yerba con naranja",
+		"price": 3800,
+		"thumbnail": "yerba1.jpg",
+		"code": "QWE123",
+		"stock": 300
+	},
+	{
+		"id": 2,
+		"title": "Yerba",
+		"description": "Yerba Organica",
+		"price": 2500,
+		"thumbnail": "yerba2.jpg",
+		"code": "DEF123",
+		"stock": 150
+	}
+]	{
+		"id": 3,
+		"title": "Yerba",
+		"description": "Yerba Despalada",
+		"price": 3000,
+		"thumbnail": "yerba3.jpg",
+		"code": "GHI123",
+		"stock": 250
+	}
+]
