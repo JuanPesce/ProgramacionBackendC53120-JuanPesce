@@ -16,7 +16,7 @@ class ProductManager{
             this.products = [];
         }
 
-        fs.writeFileSync(`${this.path}/products.txt`, JSON.stringify(this.products, null, '\t'));
+        fs.writeFileSync(`${this.path}/products.json`, JSON.stringify(this.products, null, '\t'));
     }
 
     static id = 0;
@@ -52,7 +52,7 @@ class ProductManager{
         this.products.push(newProduct);
         console.log("Nuevo producto agregado: ", newProduct)
 
-        await fs.promises.writeFile(`${this.path}/products.txt`, JSON.stringify(this.products, null, "\t"))
+        await fs.promises.writeFile(`${this.path}/products.json`, JSON.stringify(this.products, null, "\t"))
 
     }
 
@@ -60,7 +60,7 @@ class ProductManager{
         // return this.products;
 
         try {
-            const readFile = await fs.promises.readFile(`${this.path}/this.products.txt`, "utf8");
+            const readFile = await fs.promises.readFile(`${this.path}/this.products.json`, "utf8");
             const productObject = json.parse(readFile)
 
             return productObject;
@@ -95,7 +95,7 @@ class ProductManager{
         //     if(reachID >0){
 
         //         this.products[reachID] = { ...this.products[reachID], ...base, id: id };
-        //         fs.writeFileSync(`${this.path}/products.txt`, JSON.stringify(this.products, null, '\t'));
+        //         fs.writeFileSync(`${this.path}/products.json`, JSON.stringify(this.products, null, '\t'));
 
         //     }else{
         //         console.error("Not Found for update")
@@ -123,7 +123,7 @@ class ProductManager{
             this.products[findId] = updateProduct;
         
             try {
-            await fs.promises.writeFile(`${this.path}/products.txt` , JSON.stringify(this.products , null , "\t"));
+            await fs.promises.writeFile(`${this.path}/products.json` , JSON.stringify(this.products , null , "\t"));
 
             } catch (error) {
               console.error("Error escribiendo archivo", error);
@@ -142,7 +142,7 @@ class ProductManager{
         this.products.splice(deleteForId, 1);
     
 
-        await fs.promises.writeFile(`${this.path}/products.txt` , JSON.stringify(this.products , null , "\t"));
+        await fs.promises.writeFile(`${this.path}/products.json` , JSON.stringify(this.products , null , "\t"));
 
         console.log(`El producto con el id ${id} fue borrado correctamente`);
 
