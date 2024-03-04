@@ -1,0 +1,94 @@
+[
+	{
+		"id": 1,
+		"title": "Yerba 1",
+		"description": "Yerba con naranja",
+		"price": 3800,
+		"thumbnail": "yerba1.jpg",
+		"code": "QWE123",
+		"stock": 300
+	},
+	{
+		"id": 2,
+		"title": "Yerba 2",
+		"description": "Yerba Organica",
+		"price": 2500,
+		"thumbnail": "yerba2.jpg",
+		"code": "DEF123",
+		"stock": 150
+	},
+	{
+		"id": 3,
+		"title": "Yerba 3",
+		"description": "Yerba Despalada",
+		"price": 3000,
+		"thumbnail": "yerba3.jpg",
+		"code": "GHI123",
+		"stock": 250
+	},
+	{
+		"id": 4,
+		"title": "Yerba 4",
+		"description": "Yerba 4",
+		"price": 3000,
+		"thumbnail": "yerba4.jpg",
+		"code": "GHI1234",
+		"stock": 250
+	},
+	{
+		"id": 5,
+		"title": "Yerba 5",
+		"description": "Yerba 5",
+		"price": 3000,
+		"thumbnail": "yerba5.jpg",
+		"code": "GHI1235",
+		"stock": 250
+	},
+	{
+		"id": 6,
+		"title": "Yerba 6",
+		"description": "Yerba 6",
+		"price": 3000,
+		"thumbnail": "yerba6.jpg",
+		"code": "GHI1236",
+		"stock": 250
+	},
+	{
+		"id": 7,
+		"title": "Yerba 7",
+		"description": "Yerba 7",
+		"price": 3000,
+		"thumbnail": "yerba7.jpg",
+		"code": "GHI1237",
+		"stock": 250
+	},
+	{
+		"id": 8,
+		"title": "Yerba 8",
+		"description": "Yerba otros",
+		"price": 3000,
+		"thumbnail": "yerba8.jpg",
+		"code": "GHI1238",
+		"stock": 250
+	},
+	{
+		"id": 9,
+		"title": "Yerba 9",
+		"description": "Yerba Palermo",
+		"price": 3000,
+		"thumbnail": "yerba9.jpg",
+		"code": "GHI1239",
+		"stock": 250
+	},
+	{
+		"id": 10,
+		"title": "Yerba 10",
+		"description": "Yerba Diego",
+		"price": 3000,
+		"thumbnail": "yerba10.jpg",
+		"code": "GHI12310",
+		"stock": 250
+	}
+	
+	
+]
